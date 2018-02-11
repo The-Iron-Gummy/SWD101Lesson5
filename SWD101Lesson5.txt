@@ -1,0 +1,96 @@
+------------------------------------------------------------------------------------------------------//Lesson 5//
+------------------------------------------------------------------------------------------------//Main Hands-On Project//
+class Stadium{constructor(name, city, capacity)
+{
+    this.name = name;
+    this.city = city;
+    this.capacity = capacity;
+}
+    describeStadium() { console.log("The " + this.name + " is in " + this.city + " and holds " + this.capacity + " fans.") }
+}
+let stadium1 = new Stadium("Mercedes Benz Arena", "Atlanta", 70000);
+stadium1.describeStadium();
+----------------------------------------------------------------------------------------------------//Stretch Goal #1//
+class Stadium{constructor(name, city, capacity, sport, taken)
+{
+    this.name = name;
+    this.city = city;
+    this.capacity = capacity;
+    this.sport = sport;
+    this.taken = taken;
+}
+    describeStadium()
+    {
+        console.log("The " + this.name + " is in " + this.city + " and holds " + this.capacity + " fans.")
+    }
+    sportPlayed()
+    {
+        console.log("The following sport is mainly played in this stadium: " + this.sport);
+    }
+    seatsAvailable()
+    {
+        let reCap = this.capacity - this.taken;
+        console.log("There are " + reCap + " seats still available for tonight's game.");
+    }
+}
+let stadium1 = new Stadium("Mercedes Benz Arena", "Atlanta", 70000, "Football", 55000);
+stadium1.describeStadium();
+stadium1.sportPlayed();
+stadium1.seatsAvailable();
+----------------------------------------------------------------------------------------------------//Stretch Goal #2//
+class Employee {
+    constructor(name, salary, hireDate, position, experience, degree)
+{
+    this.name = name;
+    this.salary = salary;
+    this.hireDate = hireDate;
+    this.position = position;
+    this.experience = experience;
+    this.degree = degree;
+}
+    getName()
+    {
+        console.log(this.name.toUpperCase());
+    }
+    getSalary()
+    {
+        console.log(this.salary);
+    }
+    getHireDate()
+    {
+        console.log(this.hireDate);
+    }
+    jobDescription()
+    {
+        console.log(this.position);
+    }
+    yearsExperience()
+    {
+        console.log(this.experience);
+    }
+    degreeCompleted()
+    {
+        console.log(this.degree);
+    }
+    employeeInfo()
+    {
+        console.log("Welcome " + this.name.toUpperCase() + ",  you have been hired as a " + this.position + " with a salary of " + this.salary + "." + " You applied with a degree in " + this.degree + " with " + this.experience + " years of experience.");
+    }
+}
+class Manager extends Employee{constructor(name, salary, hireDate, position, experience, degree)
+    {
+        super(name, salary, hireDate, position, experience, degree);
+    }
+}
+class Designer extends Employee {constructor(name, salary, hireDate, position, experience, degree)
+    {
+        super(name, salary, hireDate, position, experience, degree); 
+    }
+}
+class QA extends Employee {constructor(name, salary, hireDate, position, experience, degree)
+    {
+        super(name, salary, hireDate, position, experience, degree); 
+    }
+}
+let employee1 = new Manager("Jay Quelin", 400000, "06-22-2034", "Manager", 3, "Business");
+employee1.employeeInfo();
